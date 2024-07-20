@@ -1,0 +1,71 @@
+import React, {useState} from 'react';
+import TableWithBtns from "../../../Tables/TableWithBtns";
+import AddDepartmentModal from "../../../modals/AddDepartment.modal";
+
+function AddDepartmentTap(props) {
+    const [isAddDepartmentModalOpen, setIsAddDepartmentModalOpen] = useState(false);
+    const displayAddDepartmentModal = () =>{
+        setIsAddDepartmentModalOpen(!isAddDepartmentModalOpen);
+    }
+    return (
+        <>
+            <TableWithBtns editIcon={true} deleteIcon={true} userIcon={true} handelUserIcon={displayAddDepartmentModal} >
+                <thead
+                    className="table-font text-primary text-gray-900 uppercase dark:text-gray-400 title-table-font">
+                <tr>
+                    <th scope="col" className="px-6 py-3">
+                        <input type={"checkbox"} name={""} onChange={() => {}}/>
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                        القسم
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                        مدير القسم
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                        عدد الموظفين
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                        النقاط
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                        التفاعل
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                        الانجاز
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr className="">
+                    <td  className="px-6 py-4">
+                        <input type={"checkbox"} name={""} onChange={() => {}}/>
+                    </td>
+                    <td  className="px-6 py-4">
+                        تواصل اجتماعي
+                    </td>
+                    <td className="px-6 py-4">
+                        حازم
+                    </td>
+                    <td className="px-6 py-4">
+                        5
+                    </td>
+                    <td className="px-6 py-4">
+                        25
+                    </td>
+                    <td className="px-6 py-4">
+                        متفاعل
+                    </td>
+                    <td className="px-6 py-4 text-red-600">
+                        10%
+                    </td>
+                </tr>
+                </tbody>
+            </TableWithBtns>
+
+            <AddDepartmentModal isModalOpen={isAddDepartmentModalOpen} onClose={displayAddDepartmentModal} />
+        </>
+    );
+}
+
+export default AddDepartmentTap;
