@@ -1,18 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import BtnsIcons from "../../Supcomponents/Buttons/BtnsIcons";
 import TextInput from "../../Supcomponents/inputs/TextInput";
 import DefaultSelect from "../../Supcomponents/inputs/DefaultSelect";
 import DefaultFileInput from "../../Supcomponents/inputs/DefaultFileInput";
 import DefaultBtn from "../../Supcomponents/Buttons/DefaultBtn";
+import AddDepartmentModal from "../../../modals/Department/AddDepartment.modal";
+import EditDepartmentModal from "../../../modals/Department/EditDepartment.modal";
 
 function AddNewEmployeeTap(props) {
+    const [isAddDepartmentModalOpen, setIsAddDepartmentModalOpen] = useState(false);
+    const [isEditDepartmentModalOpen, setIsEditDepartmentModalOpen] = useState(false);
+
+    const displayAddDepartmentModal = () =>{
+        setIsAddDepartmentModalOpen(!isAddDepartmentModalOpen);
+    }
+    const displayEditDepartmentModal = () =>{
+        setIsEditDepartmentModalOpen(!isEditDepartmentModalOpen);
+    }
     return (
         <div className={"mt-10 flex flex-col"}>
             <BtnsIcons
-                userIcon={true}
-                handelUserIcon={() =>{}}
+                departmentIcon={true}
+                handelDepartmentIcon={displayAddDepartmentModal}
                 editIcon={true}
-                handelEditIcon={() =>{}}
+                handelEditIcon={displayEditDepartmentModal}
                 deleteIcon={true}
                 handelDeleteIcon={() =>{}}
             />
@@ -33,6 +44,9 @@ function AddNewEmployeeTap(props) {
                 </div>
                 <DefaultBtn className={"mt-10"} title={"اضافة موظف"} />
             </div>
+
+            <AddDepartmentModal isModalOpen={isAddDepartmentModalOpen} onClose={displayAddDepartmentModal} />
+            <EditDepartmentModal isModalOpen={isEditDepartmentModalOpen} onClose={displayEditDepartmentModal} />
 
         </div>
     );

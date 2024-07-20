@@ -14,6 +14,8 @@ function TableWithBtns(props) {
             <BtnsIcons
                 userIcon={props.userIcon}
                 handelUserIcon={props.handelUserIcon}
+                departmentIcon={props.departmentIcon}
+                handelDepartmentIcon={props.handelDepartmentIcon}
                 editIcon={props.editIcon}
                 handelEditIcon={props.handelEditIcon}
                 deleteIcon={props.deleteIcon}

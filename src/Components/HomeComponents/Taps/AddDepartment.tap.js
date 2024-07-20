@@ -1,15 +1,23 @@
 import React, {useState} from 'react';
 import TableWithBtns from "../../../Tables/TableWithBtns";
-import AddDepartmentModal from "../../../modals/AddDepartment.modal";
+import AddDepartmentModal from "../../../modals/Department/AddDepartment.modal";
+import EditDepartmentModal from "../../../modals/Department/EditDepartment.modal";
 
 function AddDepartmentTap(props) {
     const [isAddDepartmentModalOpen, setIsAddDepartmentModalOpen] = useState(false);
+    const [isEditDepartmentModalOpen, setIsEditDepartmentModalOpen] = useState(false);
     const displayAddDepartmentModal = () =>{
         setIsAddDepartmentModalOpen(!isAddDepartmentModalOpen);
     }
+    const displayEditDepartmentModal = () =>{
+        setIsEditDepartmentModalOpen(!isEditDepartmentModalOpen);
+    }
     return (
         <>
-            <TableWithBtns editIcon={true} deleteIcon={true} userIcon={true} handelUserIcon={displayAddDepartmentModal} >
+            <TableWithBtns
+                editIcon={true} handelEditIcon={displayEditDepartmentModal}
+                deleteIcon={true}
+                departmentIcon={true} handelDepartmentIcon={displayAddDepartmentModal} >
                 <thead
                     className="table-font text-primary text-gray-900 uppercase dark:text-gray-400 title-table-font">
                 <tr>
@@ -64,6 +72,7 @@ function AddDepartmentTap(props) {
             </TableWithBtns>
 
             <AddDepartmentModal isModalOpen={isAddDepartmentModalOpen} onClose={displayAddDepartmentModal} />
+            <EditDepartmentModal isModalOpen={isEditDepartmentModalOpen} onClose={displayEditDepartmentModal} />
         </>
     );
 }

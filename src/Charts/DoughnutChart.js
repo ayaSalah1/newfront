@@ -11,7 +11,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DoughnutChart = () => {
     const data = {
-        labels: ['المهام غير المنجزه ', 'المهام  المنجزه في الوقت', 'المهام المنجزه بعد الوقت', 'المهام المنجزه قبل الوقت'],
+        labels: ['المهام غير المنجزه', 'المهام المنجزه في الوقت', 'المهام المنجزه بعد الوقت', 'المهام المنجزه قبل الوقت'],
         datasets: [
             {
                 label: '# of Votes',
@@ -35,9 +35,18 @@ const DoughnutChart = () => {
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
             legend: {
                 position: 'bottom',
+                rtl: true,
+                direction:"rtl",
+                labels: {
+                    align: 'end',
+                    usePointStyle: true,
+                    pointStyle: 'circle',
+                    padding: 12, // Adjust padding between legend items
+                },
             },
             title: {
                 display: false,
@@ -46,7 +55,11 @@ const DoughnutChart = () => {
         },
     };
 
-    return <Doughnut data={data} style={{width:"80%",height:"80%"}} options={options} />;
+    return (
+        <div className={"w-full h-full"}>
+            <Doughnut data={data} options={options} width={200} height={200}/>
+        </div>
+    );
 };
 
 export default DoughnutChart;

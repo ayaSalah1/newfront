@@ -1,9 +1,9 @@
 import React from 'react';
 import TextInput from "../Components/Supcomponents/inputs/TextInput";
-import DefaultBtn from "../Components/Supcomponents/Buttons/DefaultBtn";
 import DefaultSelect from "../Components/Supcomponents/inputs/DefaultSelect";
+import DefaultBtn from "../Components/Supcomponents/Buttons/DefaultBtn";
 
-function AddDepartmentModal(props) {
+function DefaultModal(props) {
     return (
         <div id="add-department-modal" tabIndex="-1" aria-hidden="true"
              className={(props.isModalOpen ? "flex" : "hidden") + " fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-full bg-black bg-opacity-50"}>
@@ -12,7 +12,7 @@ function AddDepartmentModal(props) {
                     <div
                         className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                         <h3 className="mr-3 text-lg font-semibold text-gray-900 dark:text-white">
-                            اضافة قسم
+                            {props.title}
                         </h3>
                         <button type="button"
                                 className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -25,17 +25,13 @@ function AddDepartmentModal(props) {
                             <span className="sr-only">Close modal</span>
                         </button>
                     </div>
-                    <div className="flex flex-col items-center py-15 ">
-                        <div className={"inputs w-full px-3 flex items-center justify-center gap-16"}>
-                            <TextInput className={"custom-w-44"} name={"name"} value={""} title={"اسم القسم"}/>
-                            <DefaultSelect className={"custom-w-44"} classNameSelect={"select-arrow-left"} name={"teamEmployee"} value={""} title={"اسم المدير"}/>
-                        </div>
-                        <DefaultBtn className={"my-10"} title={"اضافه قسم"} />
-                    </div>
+
+                    {props.children}
+
                 </div>
             </div>
         </div>
     );
 }
 
-export default AddDepartmentModal;
+export default DefaultModal;
