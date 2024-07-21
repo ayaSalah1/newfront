@@ -1,17 +1,15 @@
 import './App.css';
-import HeaderComponent from "./Components/Header.component";
 import MainComponent from "./Components/Main.component";
 import MenuComponent from "./Components/Menu.component";
 import {BrowserRouter} from "react-router-dom";
+import AuthRoute from "./Routes/Auth.route";
+import AppRoute from "./Routes/app.route";
 
 function App() {
     return (
-        <div className="main flex flex-row min-h-screen">
-            <BrowserRouter>
-                <MenuComponent/>
-                <MainComponent/>
-            </BrowserRouter>
-        </div>
+        <BrowserRouter>
+            <AppRoute />
+        </BrowserRouter>
     );
 }
 

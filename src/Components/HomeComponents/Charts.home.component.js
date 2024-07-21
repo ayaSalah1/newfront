@@ -1,7 +1,6 @@
 import React from 'react';
 import LineChart from "../../Charts/LineChart ";
 import DoughnutChart from "../../Charts/DoughnutChart";
-import DefultTable from "../../Tables/DefultTable";
 
 function ChartsHomeComponent(props) {
     return (

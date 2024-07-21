@@ -2,7 +2,6 @@ import React from 'react';
 import TextInput from "../../Supcomponents/inputs/TextInput";
 import DefaultSelect from "../../Supcomponents/inputs/DefaultSelect";
 import DefaultTextArea from "../../Supcomponents/inputs/DefaultTextArea";
-import DefaultDateInput from "../../Supcomponents/inputs/DefaultDateInput";
 import InputWithIcon from "../../Supcomponents/inputs/InputWithIcon";
 import DefaultBtn from "../../Supcomponents/Buttons/DefaultBtn";
 

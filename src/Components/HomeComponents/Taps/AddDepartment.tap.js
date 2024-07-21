@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import TableWithBtns from "../../../Tables/TableWithBtns";
-import AddDepartmentModal from "../../../modals/Department/AddDepartment.modal";
+import NewDepartmentModal from "../../../modals/Department/NewDepartment.modal";
 import EditDepartmentModal from "../../../modals/Department/EditDepartment.modal";
 
 function AddDepartmentTap(props) {
@@ -15,6 +15,7 @@ function AddDepartmentTap(props) {
     return (
         <>
             <TableWithBtns
+                className={"gap-3 mt-10"}
                 editIcon={true} handelEditIcon={displayEditDepartmentModal}
                 deleteIcon={true}
                 departmentIcon={true} handelDepartmentIcon={displayAddDepartmentModal} >
@@ -71,7 +72,7 @@ function AddDepartmentTap(props) {
                 </tbody>
             </TableWithBtns>
 
-            <AddDepartmentModal isModalOpen={isAddDepartmentModalOpen} onClose={displayAddDepartmentModal} />
+            <NewDepartmentModal isModalOpen={isAddDepartmentModalOpen} onClose={displayAddDepartmentModal} />
             <EditDepartmentModal isModalOpen={isEditDepartmentModalOpen} onClose={displayEditDepartmentModal} />
         </>
     );

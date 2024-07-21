@@ -5,10 +5,18 @@ html, body {
 }
 body{
     direction: rtl;
+}
+.main{
     background-image: url('assets/images/background.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;
+}
+
+.bg-auth{
+    background-image: url('assets/images/auth-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -206,4 +214,9 @@ input[type="checkbox"]:checked::before {
 
 .text-default-opacity{
     color: rgba(0, 0, 0, 0.35);
+}
+
+.bg-auth-form{
+    background: #49869699;
+;
 }

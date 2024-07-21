@@ -1,7 +1,4 @@
 import React from 'react';
-import TextInput from "../Components/Supcomponents/inputs/TextInput";
-import DefaultSelect from "../Components/Supcomponents/inputs/DefaultSelect";
-import DefaultBtn from "../Components/Supcomponents/Buttons/DefaultBtn";
 
 function DefaultModal(props) {
     return (

@@ -1,5 +1,4 @@
 import React from 'react';
-import TextInput from "./TextInput";
 
 function InputWithIcon(props) {
     return (

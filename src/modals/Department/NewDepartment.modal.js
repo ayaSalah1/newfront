@@ -4,7 +4,7 @@ import DefaultBtn from "../../Components/Supcomponents/Buttons/DefaultBtn";
 import DefaultSelect from "../../Components/Supcomponents/inputs/DefaultSelect";
 import DefaultModal from "../DefaultModal";
 
-function AddDepartmentModal(props) {
+function NewDepartmentModal(props) {
     return (
         <DefaultModal isModalOpen={props.isModalOpen} title={"اضافة قسم"} onClose={props.onClose} >
             <div className="flex flex-col items-center py-15 ">
@@ -19,4 +19,4 @@ function AddDepartmentModal(props) {
     );
 }
 
-export default AddDepartmentModal;
+export default NewDepartmentModal;
