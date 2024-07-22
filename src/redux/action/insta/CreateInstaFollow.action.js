@@ -3,7 +3,7 @@ import {
     FAILED_CREATE_FOLLOW,
     START_CREATE_FOLLOW,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import axios from "axios";
 import {rootRoute} from "../../../Routes/Root.route";
 import Swal from "sweetalert2";

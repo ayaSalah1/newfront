@@ -4,7 +4,7 @@ import {
     FAILED_DELETE_CATEGORY,
     START_DELETE_CATEGORY,
 } from "../../Types";
-import {aleartsToast, deleteAlert} from "../../../alearts/alearts";
+import {aleartsToast, deleteAlert} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function DeleteCategoryAction (values) {

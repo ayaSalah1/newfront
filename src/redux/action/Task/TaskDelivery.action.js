@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Task_Delivery, EDIT_TASK } from "../../Types";
-import { aleartsToast } from "../../../alearts/alearts";
+import { aleartsToast } from "../../../utils/alearts/alearts";
 import { rootRoute } from "../../../Routes/Root.route";
 import socket from "../../../socket";
 import { notification } from "antd";

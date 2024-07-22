@@ -4,7 +4,7 @@ import {
     FAILED_EDIT_TASK,
     START_EDIT_TASK,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 import socket from "../../../socket";
 

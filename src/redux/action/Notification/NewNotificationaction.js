@@ -1,4 +1,4 @@
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import { New_Notification} from '../../Types';
 
 

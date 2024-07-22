@@ -4,7 +4,7 @@ import {
     FAILED_CREATE_CONTACTS_WRIRING,
     START_CREATE_CONTACTS_WRIRING,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function CreateContactAction (values) {

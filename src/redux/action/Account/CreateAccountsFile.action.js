@@ -5,7 +5,7 @@ import {
   START_CREATE_ACCOUNT_FILE,
 } from "../../Types";
 import Swal from "sweetalert2";
-import { aleartsToast } from "../../../alearts/alearts";
+import { aleartsToast } from "../../../utils/alearts/alearts";
 import { rootRoute } from "../../../Routes/Root.route";
 import { useState } from "react";
 

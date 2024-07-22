@@ -4,7 +4,7 @@ import {
     START_CHECK_ACCOUNT_TWEET,
 } from "../../Types";
 import { rootRoute } from "../../../Routes/Root.route";
-import { aleartsToast } from "../../../alearts/alearts";
+import { aleartsToast } from "../../../utils/alearts/alearts";
 
 const CheckAccountTweetAction = (values) => {
     const api = rootRoute + "/api/v1/accounts/check";

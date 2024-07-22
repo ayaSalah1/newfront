@@ -3,7 +3,7 @@ import {EDIT_DEPARTMENT,
     FAILED_EDIT_DEPARTMENT,
     START_EDIT_DEPARTMENT
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function EditDepartmentAction (values) {
@@ -27,11 +27,12 @@ function EditDepartmentAction (values) {
                     updatedDataEdit:response.data.data
                 }
             })
-            aleartsToast("success","تم تعديل الفريق بنجاح")
+            aleartsToast("success","تم تعديل القسم بنجاح")
         } catch (error) {
             dispatch({
                 type: FAILED_EDIT_DEPARTMENT
             })
+            aleartsToast("error","لم يتم تعديل القسم")
         }
     }
 }

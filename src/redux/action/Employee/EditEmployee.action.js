@@ -4,7 +4,7 @@ import {
     FAILED_EDIT_EMPLOTEE,
     START_EDIT_EMPLOTEE
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function EditEmployeeAction (values) {

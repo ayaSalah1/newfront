@@ -5,7 +5,7 @@ import {
     FAILED_DELETE_SOME_DEPARTMENTS, START_DELETE_SOME_CATEGORIES,
     START_DELETE_SOME_DEPARTMENTS,
 } from "../../Types";
-import {aleartsToast, deleteAlert} from "../../../alearts/alearts";
+import {aleartsToast, deleteAlert} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 

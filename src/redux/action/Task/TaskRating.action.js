@@ -1,5 +1,5 @@
 import axios from "axios";
-import { aleartsToast } from "../../../alearts/alearts";
+import { aleartsToast } from "../../../utils/alearts/alearts";
 import { rootRoute } from "../../../Routes/Root.route";
 import { Task_Delivery, EDIT_TASK } from "../../Types";
 function TaskRatingAction(values) {

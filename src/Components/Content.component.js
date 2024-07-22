@@ -1,6 +1,6 @@
 import React from 'react';
-import LineChart from "../Charts/LineChart ";
-import DoughnutChart from "../Charts/DoughnutChart";
+import LineChart from "../utils/Charts/LineChart ";
+import DoughnutChart from "../utils/Charts/DoughnutChart";
 import DefultTable from "../Tables/DefultTable";
 import TapsComponent from "./Taps.component";
 import ChartsHomeComponent from "./HomeComponents/Charts.home.component";

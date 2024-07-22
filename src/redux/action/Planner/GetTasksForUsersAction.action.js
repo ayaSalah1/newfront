@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Get_Tasks_Planner } from "../../Types";
 import { rootRoute } from "../../../Routes/Root.route";
-import { aleartsToast } from "../../../alearts/alearts";
+import { aleartsToast } from "../../../utils/alearts/alearts";
 
 const GetTasksForUsersAction = (date) => {
   const user = JSON.parse(localStorage.getItem("user"));

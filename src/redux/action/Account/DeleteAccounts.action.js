@@ -2,7 +2,7 @@ import axios from "axios";
 import {
     DELETE_ACCOUNT, FAILED_DELETE_ACCOUNT, START_DELETE_ACCOUNT,
 } from "../../Types";
-import {aleartsToast, deleteAlert} from "../../../alearts/alearts";
+import {aleartsToast, deleteAlert} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 

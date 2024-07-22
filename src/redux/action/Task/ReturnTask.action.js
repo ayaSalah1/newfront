@@ -4,7 +4,7 @@ import {
   FAILED_DELETE_TASK,
   START_DELETE_TASK,
 } from "../../Types";
-import { aleartsToast, deleteAlert } from "../../../alearts/alearts";
+import { aleartsToast, deleteAlert } from "../../../utils/alearts/alearts";
 import { rootRoute } from "../../../Routes/Root.route";
 import socket from "../../../socket";
 

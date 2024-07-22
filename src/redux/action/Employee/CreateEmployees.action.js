@@ -3,7 +3,7 @@ import { CREATE_EMPLOYEE,
     FAILED_CREATE_EMPLOYEE,
     START_CREATE_EMPLOYEE,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function CreateEmployeeAction (values) {

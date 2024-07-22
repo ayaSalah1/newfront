@@ -1,6 +1,6 @@
 import axios from "axios";
 import {rootRoute} from "../../../Routes/Root.route";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 
 const api = rootRoute + '/api/v1/auth/signup';
 export const SignUpAction =  (userData) => async (dispatch) => {

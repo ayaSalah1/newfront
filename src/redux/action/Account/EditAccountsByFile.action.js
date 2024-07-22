@@ -4,7 +4,7 @@ import {
     FAILED_EDIT_ACCOUNTS_FILE,
     START_EDIT_ACCOUNTS_FILE,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 
 function EditAccountsByFileAction (values) {
     const user =  JSON.parse(localStorage.getItem("user"))

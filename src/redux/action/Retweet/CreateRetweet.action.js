@@ -3,7 +3,7 @@ import {
     FAILED_CREATE_RETWEET,
     START_CREATE_RETWEET,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import axios from "axios";
 import {rootRoute} from "../../../Routes/Root.route";
 

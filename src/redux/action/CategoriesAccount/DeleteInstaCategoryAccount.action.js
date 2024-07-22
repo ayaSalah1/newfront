@@ -3,7 +3,7 @@ import {
     DELETE_CATEGORY_ACCOUNT, FAILED_DELETE_CATEGORY_ACCOUNT,
     START_DELETE_CATEGORY_ACCOUNT
 } from "../../Types";
-import {aleartsToast, deleteAlert} from "../../../alearts/alearts";
+import {aleartsToast, deleteAlert} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function DeleteInstaCategoryAccountAction (values) {

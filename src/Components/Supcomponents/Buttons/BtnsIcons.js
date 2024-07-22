@@ -1,4 +1,5 @@
 import React from 'react';
+import EditAndDeleteIcons from "./EditAndDeleteIcons";
 
 function BtnsIcons(props) {
     return (
@@ -7,10 +8,11 @@ function BtnsIcons(props) {
                 <i className="fa-solid fa-user-group"></i></div> : ""}
             {props.userIcon ? <div className={"users-icon cursor-pointer"} onClick={props.handelUserIcon}>
                 <i className="fas fa-user-plus"></i></div> : ""}
-            {props.deleteIcon ? <div className={"delete-icon cursor-pointer"} onClick={props.handelDeleteIcon}>
-                <i className="fa-regular fa-trash-can"></i></div> : ""}
-            {props.editIcon ? <div className={"edit-icon cursor-pointer"} onClick={props.handelEditIcon}>
-                <i className="fa-regular fa-pen-to-square"></i></div> : ""}
+            <EditAndDeleteIcons editIcon={props.editIcon}
+                                deleteIcon={props.deleteIcon}
+                                handelEditIcon={props.handelEditIcon}
+                                handelDeleteIcon={props.handelDeleteIcon}
+                                className={"gap-3"} />
         </div>
     );
 }

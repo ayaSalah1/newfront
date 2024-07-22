@@ -1,5 +1,5 @@
 import axios from "axios";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 import {CREATE_EMPLOYEE, CREATE_EMPLOYEE_CHAT, New_Chat, New_Message} from "../../Types";
 import GetConversaton from "./GetConversation.action";

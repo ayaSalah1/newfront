@@ -4,7 +4,7 @@ import {
     FAILED_EDIT_ACCOUNT,
     START_EDIT_ACCOUNT,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function EditAccountAction (values) {

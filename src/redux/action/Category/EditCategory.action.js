@@ -3,7 +3,7 @@ import {
     EDIT_CATEGORY,
     FAILED_EDIT_CATEGORY, START_EDIT_CATEGORY,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function EditCategoryAction (values) {

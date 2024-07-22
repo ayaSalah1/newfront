@@ -2,7 +2,7 @@ import axios from "axios";
 import {
     DELETE_DEPARTMENT, FAILED_DELETE_DEPARTMENT, START_DELETE_DEPARTMENT
 } from "../../Types";
-import {aleartsToast, deleteAlert} from "../../../alearts/alearts";
+import {aleartsToast, deleteAlert} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function DeleteDepartmentAction (values) {
@@ -14,7 +14,7 @@ function DeleteDepartmentAction (values) {
             type: START_DELETE_DEPARTMENT
         })
         try {
-            const result  = await deleteAlert("هل انت متأكد ؟","تريد الان حذف الفريق" ,"نعم اريد حذف الفريق")
+            const result  = await deleteAlert("هل انت متأكد ؟","تريد الان حذف القسم" ,"نعم اريد حذف الفريق")
             if (result) {
                 const response = await axios.delete(api, {
                     headers: {Authorization: `Bearer ${token}`}
@@ -25,13 +25,13 @@ function DeleteDepartmentAction (values) {
                     type: DELETE_DEPARTMENT,
                     payload: values.id
                 })
-                aleartsToast("success", "تم حذف الفريق بنجاح")
+                aleartsToast("success", "تم حذف القسم بنجاح")
             }
         } catch (error) {
             dispatch({
                 type: FAILED_DELETE_DEPARTMENT
             })
-            aleartsToast("error","خطأ !! لم يتم حذف الفريق")
+            aleartsToast("error","خطأ !! لم يتم حذف القسم")
         }
     }
 }

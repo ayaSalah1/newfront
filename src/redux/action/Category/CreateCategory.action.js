@@ -3,7 +3,7 @@ import {
     CREATE_CATEGORY,
      FAILED_CREATE_CATEGORY, START_CREATE_CATEGORY,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function CreateCategoryAction (values) {

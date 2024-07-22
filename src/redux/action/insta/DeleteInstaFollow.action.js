@@ -3,7 +3,7 @@ import {
     FAILED_DELETE_FOLLOW,
     START_DELETE_FOLLOW,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import axios from "axios";
 import {rootRoute} from "../../../Routes/Root.route";
 import Swal from "sweetalert2"

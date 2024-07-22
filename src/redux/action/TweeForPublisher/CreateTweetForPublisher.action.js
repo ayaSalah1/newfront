@@ -2,7 +2,7 @@ import axios from "axios";
 import {
     CREATE_TWEET_FOR_PUBLISHER, FAILED_CREATE_TWEET_FOR_PUBLISHER, START_CREATE_TWEET_FOR_PUBLISHER,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 import socket from "../../../socket";
 

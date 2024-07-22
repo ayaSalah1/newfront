@@ -5,7 +5,7 @@ import {
   START_CREATE_TWEETS_ACCOUNTS,
   STORE_MESSAGE,
 } from "../../Types";
-import { aleartsToast } from "../../../alearts/alearts";
+import { aleartsToast } from "../../../utils/alearts/alearts";
 import { rootRoute } from "../../../Routes/Root.route";
 
 function createTweetsAccountsAction({ textFileTweet, images, accounts }) {

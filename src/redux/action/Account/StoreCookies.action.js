@@ -1,7 +1,7 @@
 import axios from "axios";
 import { CHECK, FAILED_CHECK, START_CHECK, STORE_MESSAGE } from "../../Types";
 import { rootRoute } from "../../../Routes/Root.route";
-import { aleartsToast } from "../../../alearts/alearts";
+import { aleartsToast } from "../../../utils/alearts/alearts";
 import { combineReducers } from "redux";
 
 const StoreCookiesAction = (values) => {

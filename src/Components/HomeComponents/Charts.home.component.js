@@ -1,6 +1,6 @@
 import React from 'react';
-import LineChart from "../../Charts/LineChart ";
-import DoughnutChart from "../../Charts/DoughnutChart";
+import LineChart from "../../utils/Charts/LineChart ";
+import DoughnutChart from "../../utils/Charts/DoughnutChart";
 
 function ChartsHomeComponent(props) {
     return (

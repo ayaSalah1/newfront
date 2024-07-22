@@ -5,7 +5,7 @@ import {
     START_CREATE_TWEET,
 } from "../../Types";
 import {rootRoute} from "../../../Routes/Root.route";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 
 function createOneTweetsAction(values) {
     const api = rootRoute + "/api/v1/methods/tweet";

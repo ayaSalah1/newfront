@@ -5,7 +5,7 @@ import {
     START_DELETE_EMPLOYEE,
     DELETE_SOME_EMPLOYEE, DELETE_DEPARTMENT
 } from "../../Types";
-import {aleartsToast, deleteAlert, selectAleart} from "../../../alearts/alearts";
+import {aleartsToast, deleteAlert, selectAleart} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 import {useSelector} from "react-redux";
 

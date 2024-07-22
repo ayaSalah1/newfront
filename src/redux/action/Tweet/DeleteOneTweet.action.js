@@ -3,7 +3,7 @@ import {
      FAILED_DELETE_ONE_TWEET,
     START_DELETE_ONE_TWEET,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import axios from "axios";
 import {rootRoute} from "../../../Routes/Root.route";
 

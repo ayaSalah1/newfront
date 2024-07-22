@@ -1,7 +1,7 @@
 import axios from "axios";
 import {FAILED_LOGIN, START_LOGIN, USER_LOGIN} from "../../Types";
 import {rootRoute} from "../../../Routes/Root.route";
-import {aleart, aleartsToast} from "../../../alearts/alearts";
+import {aleart, aleartsToast} from "../../../utils/alearts/alearts";
 
 
 

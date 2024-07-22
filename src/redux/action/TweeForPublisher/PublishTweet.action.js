@@ -3,7 +3,7 @@ import {
     PUBLISH_TWEET,
     START_PUBLISH_TWEET,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import axios from "axios";
 import {rootRoute} from "../../../Routes/Root.route";
 import socket from "../../../socket";

@@ -2,7 +2,7 @@ import axios from "axios";
 import {
  CREATE_LOCATION, FAILED_CREATE_LOCATION, START_CREATE_LOCATION,
 } from "../../Types";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
 
 function CreateLocationAction (values) {

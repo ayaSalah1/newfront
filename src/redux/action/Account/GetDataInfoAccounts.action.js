@@ -4,7 +4,7 @@ import {
      GET_DATA_INFO, START_GET_DATA_INFO,
 } from "../../Types";
 import {rootRoute} from "../../../Routes/Root.route";
-import {aleartsToast} from "../../../alearts/alearts";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 import GetAccountsEmployeeAction from "./GetAccountsEmployee.action";
 
 

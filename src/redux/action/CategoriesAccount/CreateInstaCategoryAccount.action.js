@@ -4,7 +4,7 @@ import {
   FAILED_CREATE_CATEGORY_ACCOUNT,
   START_CREATE_CATEGORY_ACCOUNT,
 } from "../../Types";
-import { aleartsToast } from "../../../alearts/alearts";
+import { aleartsToast } from "../../../utils/alearts/alearts";
 import { rootRoute } from "../../../Routes/Root.route";
 
 function CreateInstaCategoryAccountAction(values) {

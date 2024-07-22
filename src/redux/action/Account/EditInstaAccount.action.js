@@ -4,7 +4,7 @@ import {
   FAILED_EDIT_ACCOUNT,
   START_CREATE_TWEET,
 } from "../../Types";
-import { aleartsToast } from "../../../alearts/alearts";
+import { aleartsToast } from "../../../utils/alearts/alearts";
 import { rootRoute } from "../../../Routes/Root.route";
 
 function EditInstaAccountAction(values) {
