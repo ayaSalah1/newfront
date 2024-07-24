@@ -33,7 +33,7 @@ function DeleteSomeEmployeesAction (values) {
                     type: DELETE_SOME_EMPLOYEE,
                     payload:values.employeesIds
                 })
-                aleartsToast("success", response.data.message)
+                aleartsToast("success", "تم حذف الموظفين بنجاح")
             }
         } catch (error) {
             dispatch({

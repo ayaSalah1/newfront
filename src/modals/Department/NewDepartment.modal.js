@@ -63,7 +63,7 @@ function NewDepartmentModal(props) {
                                 </ErrorMessage>
                             </div>
                         </div>
-                        <DefaultBtn className={"my-10"} title={"اضافة قسم"} spanner={isLoading}/>
+                        <DefaultBtn className={"my-6"} title={"اضافة قسم"} spanner={isLoading}/>
                     </Form>
                 )}
             </Formik>

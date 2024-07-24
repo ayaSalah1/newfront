@@ -18,8 +18,11 @@ function CreateEmployeeAction (values) {
             const formData = new FormData();
             formData.append("name", values.name);
             
-            if(values.Category)
-            formData.append("Category", values.Category);
+            if(values.Category){
+                values.Category.forEach(category => {
+                    formData.append("Category[]", category);
+                });
+            }
 
             formData.append("role", values.role);
             formData.append("weekEnd", values.weekEnd);
@@ -30,6 +33,8 @@ function CreateEmployeeAction (values) {
             formData.append("password", values.password);
             formData.append("passwordConfirm", values.passwordConfirm);
             formData.append("profileImg", values.image ? values.image  :null);
+
+            console.log("bilal")
             const response = await axios.post(api, formData,{
                 headers: { Authorization: `Bearer ${token}` }});
             dispatch({
@@ -38,6 +43,7 @@ function CreateEmployeeAction (values) {
             })
             aleartsToast("success","تم اضافة الموظف بنجاح")
         } catch (error) {
+            console.log("Error")
             dispatch({
                 type: FAILED_CREATE_EMPLOYEE
             })

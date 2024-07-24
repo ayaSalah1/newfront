@@ -16,8 +16,8 @@ function MenuComponent(props) {
     };
     return (
         <div
-            className={"menu bg-primary opacity-70 text-white w-1/12 rounded-lg flex justify-center items-center overflow-auto max-h-full min-h-full"}>
-            <ul className={"list-menu flex flex-col items-center justify-center gap-3"}>
+            className={"menu bg-primary opacity-70 text-white w-1/12 rounded-lg flex justify-center overflow-auto max-h-full min-h-full"}>
+            <ul className={"list-menu flex flex-col items-center pt-16 gap-3"}>
                 <li className={"w-full"}>
                     <NavLink to={"/"}
                              style={hoverFunction}

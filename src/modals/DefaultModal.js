@@ -7,7 +7,7 @@ function DefaultModal(props) {
             <div className="relative p-4 w-full max-w-2xl max-h-full">
                 <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <div
-                        className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                        className="flex items-center justify-between px-4 pt-4 pb-2 md:px-5 md:pt-4 md:pb-2 rounded-t">
                         <h3 className="mr-3 text-lg font-semibold text-gray-900 dark:text-white">
                             {props.title}
                         </h3>

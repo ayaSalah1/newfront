@@ -28,7 +28,7 @@ function AddNewEmployeeTap(props) {
                 deleteIcon={true}
                 handelDeleteIcon={() =>{}}
             />
-            <NewEmployeeForm title={"اضافة موظف"} className={"gap-6 mx-auto px-20"}/>
+            <NewEmployeeForm titleBtn={"اضافة موظف"} title={"اضافة موظف"} className={"gap-6 mx-auto px-20"}/>
 
             <NewDepartmentModal isModalOpen={isAddDepartmentModalOpen} onClose={displayAddDepartmentModal} />
             <EditDepartmentModal isModalOpen={isEditDepartmentModalOpen} onClose={displayEditDepartmentModal} />

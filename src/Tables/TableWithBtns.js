@@ -24,28 +24,24 @@ function TableWithBtns(props) {
                 deleteIcon={props.deleteIcon}
                 handelDeleteIcon={props.handelDeleteIcon}
             />
-            {
-                props.title ?
-                    <div className={"pb-5 " + props.titleClass}>
-                        <h3 className={"font-bold"}>{props.title}</h3>
-                    </div>
-                    :""
-            }
-            {
-                props.isInput ?
-                    <div>
-                        <TextInput className={props.inputClass} name={props.inputName} value={props.inputValue}
-                                   title={props.inputTitle}/>
-                    </div>
-                    :""
-            }
+            {props.title && (
+                <div className={"pb-5 " + props.titleClass}>
+                    <h3 className={"font-bold"}>{props.title}</h3>
+                </div>
+            )}
+            {props.isInput && (
+                <div>
+                    <TextInput value={props.inputValue} onChange={props.handleChangeSearchValue} className={props.inputClass} name={props.inputName}
+                               title={props.inputTitle} />
+                </div>
+            )}
 
-            <div className="relative overflow-x-auto">
+            <div className="relative overflow-x-auto w-full">
                 <table className="w-full text-sm text-right ltr:text-left text-gray-500 dark:text-gray-400">
                     {props.children}
                 </table>
             </div>
-            <PagenationComponent handelNext={handelNext} handelPrevious={handelPrevious}/>
+            <PagenationComponent handelNext={handelNext} handelPrevious={handelPrevious} />
         </div>
     );
 }

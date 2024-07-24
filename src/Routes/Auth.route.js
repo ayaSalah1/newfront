@@ -8,7 +8,7 @@ function AuthRoute(props) {
         <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RejesterPage />} />
-            <Route path="*" element={<Navigate to="/register" replace/>}/>
+            <Route path="*" element={<Navigate to="/login" replace/>}/>
         </Routes>
     );
 }

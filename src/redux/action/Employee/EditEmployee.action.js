@@ -4,8 +4,8 @@ import {
     FAILED_EDIT_EMPLOTEE,
     START_EDIT_EMPLOTEE
 } from "../../Types";
-import {aleartsToast} from "../../../utils/alearts/alearts";
 import {rootRoute} from "../../../Routes/Root.route";
+import {aleartsToast} from "../../../utils/alearts/alearts";
 
 function EditEmployeeAction (values) {
     const user =  JSON.parse(localStorage.getItem("user"))
@@ -21,10 +21,10 @@ function EditEmployeeAction (values) {
                 name:values.name,
                 holidays: values.holidays,
                 type : values.type,
-                Category:values.Category,
+                Category:values.Category.map((category) => {return category.value}),
                 role:values.role,
                 active:values.active,
-                Department:values.Department,
+                Department:values.Department._id,
                 ...email
                 ,
             },{
