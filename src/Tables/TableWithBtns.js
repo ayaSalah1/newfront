@@ -23,6 +23,7 @@ function TableWithBtns(props) {
                 handelEditIcon={props.handelEditIcon}
                 deleteIcon={props.deleteIcon}
                 handelDeleteIcon={props.handelDeleteIcon}
+                deleteContent={props.deleteContent}
             />
             {props.title && (
                 <div className={"pb-5 " + props.titleClass}>

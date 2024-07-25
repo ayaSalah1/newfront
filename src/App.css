@@ -224,3 +224,8 @@ input[type="checkbox"]:checked::before {
 .border-t-primary{
     border-top-color: #498696;
 }
+
+.main,.tapsArea{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}

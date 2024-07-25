@@ -95,6 +95,7 @@ function EmployeesEmployeesTap() {
                         handelUserIcon={displayNewEmployeeModal}
                         deleteIcon={true}
                         handelDeleteIcon={handelClickDeleteBtn}
+                        deleteContent={"حذف الموظفين المحددين"}
                     />
                 </div>
                 <div className="w-full flex flex-wrap h-full gap-10">
@@ -167,6 +168,8 @@ function EmployeesEmployeesTap() {
                                                 handelDeleteIcon={() => handelDeleteIcon(element)}
                                                 classEdit={"text-primary"}
                                                 classDelete={"text-red-500"}
+                                                editContent={"تعديل الموظف"}
+                                                deleteContent={"حذف الموظف"}
                                                 className={"flex-row-reverse justify-end gap-3"}
                                             />
                                         </td>

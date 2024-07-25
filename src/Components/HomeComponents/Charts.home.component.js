@@ -8,7 +8,7 @@ function ChartsHomeComponent(props) {
             <div className={"w-5/12 flex items-center justify-center"}>
                 <LineChart/>
             </div>
-            <div className={"w-3/12 flex items-center justify-center"}>
+            <div className={"w-4/12 flex items-center justify-center"}>
                 <DoughnutChart/>
             </div>
         </div>

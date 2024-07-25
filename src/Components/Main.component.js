@@ -5,11 +5,13 @@ import MenuComponent from "./Menu.component";
 
 function MainComponent(props) {
     return (
-        <div className="w-full flex flex-row min-h-screen">
+        <div className="w-full flex flex-row max-h-screen">
             <MenuComponent/>
-            <div className="main flex w-full flex-col min-h-screen">
+            <div className={"flex flex-col w-full"}>
                 <HeaderComponent/>
-                {props.children}
+                <div className="flex w-full flex-col">
+                    {props.children}
+                </div>
             </div>
         </div>
     );

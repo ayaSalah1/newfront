@@ -59,6 +59,7 @@ function DepartmentsEmployeesTap(props) {
         <>
             <TableWithBtns className={"gap-3 mt-10"} title="الأقسام" titleClass={"pr-10"}
                            deleteIcon={true} handelDeleteIcon={handelClickDeleteBtn}
+                           deleteContent={"حذف الاقسام المحددين"}
                            departmentIcon={true} handelDepartmentIcon={displayAddDepartmentModal}>
                 <thead
                     className="table-font text-primary text-gray-900 uppercase dark:text-gray-400 title-table-font">
@@ -117,6 +118,8 @@ function DepartmentsEmployeesTap(props) {
                                                     handelDeleteIcon={() => handelDeleteIcon(department)}
                                                     classEdit={"text-primary"}
                                                     classDelete={"text-red-500"}
+                                                    editContent={"تعديل القسم"}
+                                                    deleteContent={"حذف القسم"}
                                                     className={"flex-row-reverse justify-end gap-3"} />
                             </td>
                         </tr>

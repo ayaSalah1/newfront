@@ -23,10 +23,6 @@ function AddNewEmployeeTap(props) {
             <BtnsIcons
                 departmentIcon={true}
                 handelDepartmentIcon={displayAddDepartmentModal}
-                editIcon={true}
-                handelEditIcon={displayEditDepartmentModal}
-                deleteIcon={true}
-                handelDeleteIcon={() =>{}}
             />
             <NewEmployeeForm titleBtn={"اضافة موظف"} title={"اضافة موظف"} className={"gap-6 mx-auto px-20"}/>
 
