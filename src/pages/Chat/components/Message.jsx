@@ -15,7 +15,7 @@ const Message = ({ text, isUser }) => (
         p: 2,
         maxWidth: "70%",
         borderRadius: "15px",
-        bgcolor: isUser ? "#C0DBDE" : "grey.200",
+        bgcolor: isUser ? "#49869626" : "#4986964D",
       }}
     >
       <Typography variant="body2">{text}</Typography>

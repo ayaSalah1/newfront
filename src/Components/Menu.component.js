@@ -7,7 +7,7 @@ import analysisIcon from "../assets/icons/analysis.png";
 import tweeterIcon from "../assets/icons/tweeter.png";
 import settingIcon from "../assets/icons/setting.png";
 import { NavLink } from "react-router-dom";
-
+import GridViewIcon from "@mui/icons-material/GridView";
 function MenuComponent(props) {
   const hoverFunction = ({ isActive, isPending }) => {
     return {
@@ -71,6 +71,16 @@ function MenuComponent(props) {
           >
             <img className={"icon-item-menu"} src={analysisIcon} alt={"img"} />
             <p className={"text-item-menu"}>تحليل</p>
+          </NavLink>
+        </li>
+        <li className={"w-full"}>
+          <NavLink
+            to={"/catagories"}
+            style={hoverFunction}
+            className="item-menu font-bold text-white flex flex-col items-center justify-center py-2"
+          >
+            <GridViewIcon />
+            <p className={"text-item-menu"}>تصنيفات</p>
           </NavLink>
         </li>
         <li className={"w-full"}>

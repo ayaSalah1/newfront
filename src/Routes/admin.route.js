@@ -4,6 +4,7 @@ import MainComponent from "../Components/Main.component";
 import HomePage from "../pages/Home.page";
 import EmployeesPage from "../pages/Employees.page";
 import Chat from "../pages/Chat/Chat";
+import ManageTasks from "../pages/ManageTasks/ManageTasks";
 
 function AdminRoute(props) {
   return (
@@ -28,7 +29,9 @@ function AdminRoute(props) {
         path="/management"
         element={
           <MainComponent>
-            <div className={"p-10"}> management </div>
+            <div className={"p-10"}>
+              <ManageTasks />
+            </div>
           </MainComponent>
         }
       />
@@ -47,6 +50,14 @@ function AdminRoute(props) {
         element={
           <MainComponent>
             <div className={"p-10"}> analyser </div>
+          </MainComponent>
+        }
+      />
+      <Route
+        path="/categories"
+        element={
+          <MainComponent>
+            <div className={"p-10"}> categories </div>
           </MainComponent>
         }
       />

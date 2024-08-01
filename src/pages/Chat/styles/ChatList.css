@@ -1,0 +1,64 @@
+.chatListContainer {
+  padding: 16px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+  direction: ltr;
+}
+
+.chatHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  justify-content: space-between;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  direction: rtl;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0 8px;
+  height: 40px;
+}
+
+.searchIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.divider {
+  height: 20px;
+  width: 1%;
+  background-color: #ccc;
+  margin: 0 8px;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.chatListItem {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  width: 100%;
+  justify-content: flex-start;
+  border-radius: 8px;
+  direction: rtl;
+}
+
+.selectedChat {
+  background-color: #a6cdd7;
+}
+
+.chatItemText {
+  flex: none;
+  margin-left: 8px;
+}

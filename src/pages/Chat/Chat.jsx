@@ -1,95 +1,61 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Typography,
-  TextField,
-  Paper,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemAvatar,
-  Avatar,
-  Grid,
-  Divider,
-  InputAdornment,
-  IconButton,
-} from "@mui/material";
-import { ChatBubble, Notifications, Search, Timer } from "@mui/icons-material";
+import { Box, Grid, Divider } from "@mui/material";
 import ChatWindow from "./components/ChatWindow";
+import ChatList from "./components/ChatList";
+import TapsComponent from "../../Components/Taps.component";
 
 const Chat = () => {
-  const [selectedChat, setSelectedChat] = useState("محمد علي");
+  const [selectedChat, setSelectedChat] = useState({
+    name: "محمد علي",
+    avatar: "/path/to/avatar.jpg",
+  });
 
-  const handleChatClick = (name) => {
-    setSelectedChat(name);
+  const handleChatClick = (chat) => {
+    setSelectedChat(chat);
   };
 
   return (
-    <Box sx={{ width: "90%", margin: "auto", display: "flex", height: "80vh" }}>
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <ChatList selectedChat={selectedChat} onChatClick={handleChatClick} />
-        </Grid>
-        <Grid item xs={8}>
-          <ChatWindow selectedChat={selectedChat} />
-        </Grid>
-      </Grid>
-    </Box>
-  );
-};
-
-const ChatList = ({ selectedChat, onChatClick }) => {
-  const accounts = ["محمد علي", "حسام عكيله", "رنا الحايك", "محمد عمر"];
-
-  return (
-    <Paper elevation={3} sx={{ p: 2, height: "auto" }}>
-      <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-        <Typography variant="h6">محادثات الموظفين</Typography>
-        <Box sx={{ ml: "auto" }}>
-          <IconButton>
-            <Notifications />
-          </IconButton>
-          <IconButton>
-            <ChatBubble />
-          </IconButton>
-          <IconButton>
-            <Timer />
-          </IconButton>
-        </Box>
-      </Box>
-      <TextField
-        fullWidth
-        variant="outlined"
-        placeholder="البحث"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <Search />
-            </InputAdornment>
-          ),
-        }}
-        sx={{ mb: 2 }}
-      />
-      <List>
-        {accounts.map((name, index) => (
-          <React.Fragment key={name}>
-            <ListItem button onClick={() => onChatClick(name)}>
-              <ListItemAvatar>
-                <Avatar>{name[0]}</Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary={name}
-                secondary="السلام عليكم"
-                primaryTypographyProps={{
-                  fontWeight: selectedChat === name ? "bold" : "normal",
-                }}
+    <TapsComponent
+      firstTapTitle={"المحادثات"}
+      secondTapTitle={"الاجتماعات"}
+      thirdTapTitle={"الاشعارات"}
+      firstTapComponent={
+        <Box sx={{ width: "95%", margin: "4rem auto" }}>
+          <Grid container spacing={6}>
+            <Grid item xs={3.5}>
+              <ChatList
+                selectedChat={selectedChat}
+                onChatClick={handleChatClick}
               />
-            </ListItem>
-            {index < accounts.length - 1 && <Divider component="li" />}
-          </React.Fragment>
-        ))}
-      </List>
-    </Paper>
+            </Grid>
+            <Grid item xs={8.5}>
+              <Box sx={{ display: "flex", height: "100%" }}>
+                <Box
+                  sx={{
+                    width: "24px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "stretch",
+                  }}
+                >
+                  <Divider
+                    orientation="vertical"
+                    flexItem
+                    sx={{
+                      bgcolor: "#C9A0A0",
+                      width: "1px",
+                    }}
+                  />
+                </Box>
+                <Box sx={{ flexGrow: 1, pl: 3 }}>
+                  <ChatWindow selectedChat={selectedChat} />
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+      }
+    />
   );
 };
 
