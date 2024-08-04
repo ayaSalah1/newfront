@@ -14,22 +14,25 @@ function TableWithBtns(props) {
 
     return (
         <div className={"flex flex-col " + props.className}>
-            <BtnsIcons
-                userIcon={props.userIcon}
-                handelUserIcon={props.handelUserIcon}
-                departmentIcon={props.departmentIcon}
-                handelDepartmentIcon={props.handelDepartmentIcon}
-                editIcon={props.editIcon}
-                handelEditIcon={props.handelEditIcon}
-                deleteIcon={props.deleteIcon}
-                handelDeleteIcon={props.handelDeleteIcon}
-                deleteContent={props.deleteContent}
-            />
-            {props.title && (
-                <div className={"pb-5 " + props.titleClass}>
-                    <h3 className={"font-bold"}>{props.title}</h3>
-                </div>
-            )}
+            <div className={"flex w-full justify-between"}>
+                {props.title && (
+                    <div className={"pb-5 " + props.titleClass}>
+                        <h3 className={"font-bold"}>{props.title}</h3>
+                    </div>
+                )}
+
+                <BtnsIcons
+                    userIcon={props.userIcon}
+                    handelUserIcon={props.handelUserIcon}
+                    departmentIcon={props.departmentIcon}
+                    handelDepartmentIcon={props.handelDepartmentIcon}
+                    editIcon={props.editIcon}
+                    handelEditIcon={props.handelEditIcon}
+                    deleteIcon={props.deleteIcon}
+                    handelDeleteIcon={props.handelDeleteIcon}
+                    deleteContent={props.deleteContent}
+                />
+            </div>
             {props.isInput && (
                 <div>
                     <TextInput value={props.inputValue} onChange={props.handleChangeSearchValue} className={props.inputClass} name={props.inputName}

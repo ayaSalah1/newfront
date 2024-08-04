@@ -31,6 +31,10 @@ body{
 .bg-primary-500{
     background: #49869666;
 }
+
+.bg-primary-100{
+    background: #EDF3F4;
+}
 .item-menu{
     width: 100%;
     gap:3px;

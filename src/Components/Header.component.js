@@ -7,7 +7,7 @@ import {useSelector} from "react-redux";
 function HeaderComponent(props) {
     const user = useSelector((state) => state.user.data);
     return (
-      <div className="header w-full bg-white mb-20 p-10 h-10 ">
+      <div className="header w-full bg-white mb-10 p-10 h-10 ">
           <div className={"w-10/12 mx-auto flex flex-row-reverse justify-between px-5 items-center"}>
               <div className={"flex gap-3 flex-row-reverse"}>
                   <div className={"max-w-10"}>

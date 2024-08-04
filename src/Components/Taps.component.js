@@ -5,6 +5,7 @@ function TapsComponent(props) {
     const [isSecondTap, setIsSecondTap] = useState(false)
     const [isThirdTap, setIsThirdTap] = useState(false)
     const [isFourthTap, setIsFourthTap] = useState(false)
+    const [isFifthTap, setIsFifthTap] = useState(false)
 
     const handelTapsMovs = (e) => {
         switch (e.target.id) {
@@ -13,30 +14,42 @@ function TapsComponent(props) {
                 setIsSecondTap(false)
                 setIsThirdTap(false)
                 setIsFourthTap(false)
+                setIsFifthTap(false)
                 break
             case "second-tap":
                 setisFirstTap(false)
                 setIsSecondTap(true)
                 setIsThirdTap(false)
                 setIsFourthTap(false)
+                setIsFifthTap(false)
                 break
             case "third-tap":
                 setisFirstTap(false)
                 setIsSecondTap(false)
                 setIsThirdTap(true)
                 setIsFourthTap(false)
+                setIsFifthTap(false)
                 break
             case "fourth-tap":
                 setisFirstTap(false)
                 setIsSecondTap(false)
                 setIsThirdTap(false)
                 setIsFourthTap(true)
+                setIsFifthTap(false)
+                break
+            case "fifth-tap":
+                setisFirstTap(false)
+                setIsSecondTap(false)
+                setIsThirdTap(false)
+                setIsFourthTap(false)
+                setIsFifthTap(true)
                 break
             default:
                 setisFirstTap(true)
                 setIsSecondTap(false)
                 setIsThirdTap(false)
                 setIsFourthTap(false)
+                setIsFifthTap(false)
                 break
         }
     }
@@ -50,6 +63,8 @@ function TapsComponent(props) {
             return props.ThirdTapComponent
         } else if (isFourthTap) {
             return props.FourthTapComponent
+        } else if (isFifthTap) {
+            return props.FifthTapComponent
         }
     }
     return (
@@ -64,6 +79,8 @@ function TapsComponent(props) {
                         onClick={(e) => handelTapsMovs(e)}>{props.thirdTapTitle}</li>
                     <li id={"fourth-tap"} className={`item-tap ${isFourthTap ? ' active-tap ' : null}`}
                         onClick={(e) => handelTapsMovs(e)}>{props.FourthTapTitle}</li>
+                    <li id={"fifth-tap"} className={`item-tap ${isFifthTap ? ' active-tap ' : null}`}
+                        onClick={(e) => handelTapsMovs(e)}>{props.FifthTapTitle}</li>
                 </ul>
             </div>
             <div className={"tapsArea w-full max-h-[calc(100vh-12.62rem)] overflow-y-auto"}>

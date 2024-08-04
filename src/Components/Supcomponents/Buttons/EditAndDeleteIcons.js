@@ -30,7 +30,7 @@ function EditAndDeleteIcons(props) {
             <Tooltip
                 id={"id-delete"}
                 place={"bottom"}
-                style={{backgroundColor:"#d7355d"}}
+                style={props.bgPrimaryDelete ? {backgroundColor:"#498696"} : {backgroundColor:"#d7355d"}}
             />
             <Tooltip
                 id={"id-edit"}

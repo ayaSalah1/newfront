@@ -5,7 +5,7 @@ import NewEmployeeForm from "../../Components/Supcomponents/Forms/NewEmployee.fo
 function NewEmployeeModal(props) {
     return (
         <DefaultModal isModalOpen={props.isModalOpen} title={"اضافة موظف"} onClose={props.onClose} >
-            <NewEmployeeForm titleBtn={"اضافة موظف"} className={"gap-6 mx-auto px-10 pb-8"} />
+            <NewEmployeeForm titleBtn={"اضافة"} className={"gap-6 mx-auto px-10 pb-8"} />
         </DefaultModal>
     );
 }

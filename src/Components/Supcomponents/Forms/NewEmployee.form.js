@@ -109,14 +109,14 @@ function NewEmployeeForm(props) {
                             name="password"
                             value={values.password}
                             onChange={handleChange}
-                            title={"كلمه المرور"}
+                            title={"كلمة المرور"}
                         />
                         <TextInput
                             className={"custom-w-44"}
                             name="passwordConfirm"
                             value={values.passwordConfirm}
                             onChange={handleChange}
-                            title={"تأكيد كلمه المرور"}
+                            title={"تأكيد كلمة المرور"}
                         />
                         <DefaultFileInput
                             className={"custom-w-44 text-default-opacity"}
@@ -156,7 +156,7 @@ function NewEmployeeForm(props) {
                             name="holidays"
                             value={values.holidays}
                             onChange={handleChange}
-                            title={"ايام الاجازه السنويه"}
+                            title={"ايام الاجازة السنوية"}
                         />
                         <DefaultSelect
                             className={"custom-w-44"}
