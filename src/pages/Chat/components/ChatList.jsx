@@ -13,19 +13,23 @@ import {
   IconButton,
 } from "@mui/material";
 import "../styles/ChatList.css";
+import CreateChatModal from "./CreateChatModal";
 
 const ChatList = ({ selectedChat, onChatClick }) => {
+  const [modalOpen, setModalOpen] = React.useState(false);
   const accounts = [
     { name: "محمد علي", avatar: "url_to_avatar1.jpg" },
     { name: "حسام عكيله", avatar: "url_to_avatar2.jpg" },
     { name: "رنا الحايك", avatar: "url_to_avatar3.jpg" },
     { name: "محمد عمر", avatar: "url_to_avatar4.jpg" },
   ];
+  const handleModalOpen = () => setModalOpen(true);
+  const handleModalClose = () => setModalOpen(false);
 
   return (
     <Paper className="chatListContainer" elevation={0}>
       <Box className="chatHeader">
-        <IconButton>
+        <IconButton onClick={handleModalOpen}>
           <img
             src="https://s3-alpha-sig.figma.com/img/cb2a/e859/44864670cb08f54b86c02c3e0517d46e?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MS8t3Bg3Nrcg1S4b~mURLjxEgA-tj1kDWkV3-PKo1qbtvEUUi56m~cver-kA74bPbDhE0-zM461hQOUrbKKFwQXgzpKCozFt0BxB63te4t1u2iKhIDqtS2CALzuiPlnNALm23Bxaux9VsosDiHwVNyTLbWlEXjg34B7BFSn4UFrBKcmJNC3rcpTKDnW1vu8f867O~D7-4uVLIN87QC3WH93C2n7oquUv1Jn4Tn0gBlRpIsTUkIVLpfNzR7en4VoLwnIhgAm-OdgkhWwB7I25PXHFhjFeIfBsKrE7Xn2O0fwccvTpO3-BN1vFHFGOtUg2TUW6FhaW8euyofZ0oodhdQ__"
             alt="icon"
@@ -104,6 +108,7 @@ const ChatList = ({ selectedChat, onChatClick }) => {
           </React.Fragment>
         ))}
       </List>
+      <CreateChatModal show={modalOpen} onClose={handleModalClose} />
     </Paper>
   );
 };

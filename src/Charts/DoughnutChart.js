@@ -1,65 +1,79 @@
-import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import {
-    Chart as ChartJS,
-    ArcElement,
-    Tooltip,
-    Legend,
-} from 'chart.js';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
+import { Doughnut } from "react-chartjs-2";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import GetChartsAdminAction from "../redux/action/Charts/GetChartsAdmin.action";
+import GetChartsAction from "../redux/action/Charts/GetCharts.action";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const DoughnutChart = () => {
-    const data = {
-        labels: ['المهام غير المنجزه', 'المهام المنجزه في الوقت', 'المهام المنجزه بعد الوقت', 'المهام المنجزه قبل الوقت'],
-        datasets: [
-            {
-                label: '# of Votes',
-                data: [12, 19, 3, 5],
-                backgroundColor: [
-                    'rgba(255, 99, 132)',
-                    'rgba(54, 162, 235)',
-                    'rgba(255, 206, 86)',
-                    'rgba(75, 192, 192)',
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                ],
-                borderWidth: 1,
-            },
+const DoughnutChart = ({ type }) => {
+  console.log({ type });
+  const dispatch = useDispatch();
+  const charts = useSelector((state) => state.charts.data);
+
+  useEffect(() => {
+    if (type == "admin") {
+      dispatch(GetChartsAdminAction());
+    } else {
+      dispatch(GetChartsAction());
+    }
+  }, []);
+
+  const data = {
+    labels: [
+      "المهام المنجزة قبل الوقت",
+      "المهام المنجزة بعد الوقت",
+      "المهام غير المنجزة بعد الوقت",
+      "المهام غير المنجزة قبل الوقت",
+    ],
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [
+          charts.finishedTasksBeforeDeadline,
+          charts.finishedTasksAfterDeadline,
+          charts.unFinishedTasksAfterDeadline,
+          charts.unFinishedTasksBeforeDeadline,
         ],
-    };
+        backgroundColor: [
+          "rgba(255, 167, 38, 1)",
+          "rgba(199, 40, 40, 1)",
+          "rgba(50, 199, 194, 1)",
+          "rgba(255, 235, 59, 1);",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
 
-    const options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                position: 'bottom',
-                rtl: true,
-                direction:"rtl",
-                labels: {
-                    align: 'end',
-                    usePointStyle: true,
-                    pointStyle: 'circle',
-                    padding: 12, // Adjust padding between legend items
-                },
-            },
-            title: {
-                display: false,
-                text: 'Doughnut Chart',
-            },
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "bottom",
+        rtl: true,
+        direction: "rtl",
+        labels: {
+          align: "end",
+          usePointStyle: true,
+          pointStyle: "circle",
+          padding: 12, // Adjust padding between legend items
         },
-    };
+      },
+      title: {
+        display: false,
+        text: "Doughnut Chart",
+      },
+    },
+  };
 
-    return (
-        <div className={"w-full h-full"}>
-            <Doughnut data={data} options={options} width={200} height={200}/>
-        </div>
-    );
+  return (
+    <div className={"w-full h-full"}>
+      <Doughnut data={data} options={options} width={200} height={200} />
+    </div>
+  );
 };
 
 export default DoughnutChart;

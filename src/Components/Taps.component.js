@@ -1,116 +1,95 @@
 import React, { useState } from "react";
 
 function TapsComponent(props) {
-  const [isFirstTap, setisFirstTap] = useState(true);
-  const [isSecondTap, setIsSecondTap] = useState(false);
-  const [isThirdTap, setIsThirdTap] = useState(false);
-  const [isFourthTap, setIsFourthTap] = useState(false);
-  const [isFifthTap, setIsFifthTap] = useState(false);
+  const [activeTap, setActiveTap] = useState("first-tap");
 
   const handelTapsMovs = (e) => {
-    switch (e.target.id) {
-      case "first-tap":
-        setisFirstTap(true);
-        setIsSecondTap(false);
-        setIsThirdTap(false);
-        setIsFourthTap(false);
-        setIsFifthTap(false);
-
-        break;
-      case "second-tap":
-        setisFirstTap(false);
-        setIsSecondTap(true);
-        setIsThirdTap(false);
-        setIsFourthTap(false);
-        setIsFifthTap(false);
-
-        break;
-      case "third-tap":
-        setisFirstTap(false);
-        setIsSecondTap(false);
-        setIsThirdTap(true);
-        setIsFourthTap(false);
-        setIsFifthTap(false);
-
-        break;
-      case "fourth-tap":
-        setisFirstTap(false);
-        setIsSecondTap(false);
-        setIsThirdTap(false);
-        setIsFourthTap(true);
-        setIsFifthTap(false);
-        break;
-      case "fifth-tap":
-        setisFirstTap(false);
-        setIsSecondTap(false);
-        setIsThirdTap(false);
-        setIsFourthTap(false);
-        setIsFifthTap(true);
-        break;
-      default:
-        setisFirstTap(false);
-        setIsSecondTap(false);
-        setIsThirdTap(false);
-        setIsFourthTap(false);
-        setIsFifthTap(false);
-
-        break;
-    }
+    setActiveTap(e.target.id);
   };
 
   const handelDisplayTaps = () => {
-    if (isFirstTap) {
-      return props.firstTapComponent;
-    } else if (isSecondTap) {
-      return props.SecondTapComponent;
-    } else if (isThirdTap) {
-      return props.ThirdTapComponent;
-    } else if (isFourthTap) {
-      return props.FourthTapComponent;
-    } else if (isFifthTap) {
-      return props.FifthTapComponent;
+    switch (activeTap) {
+      case "first-tap":
+        return props.firstTapComponent;
+      case "second-tap":
+        return props.SecondTapComponent;
+      case "third-tap":
+        return props.ThirdTapComponent;
+      case "fourth-tap":
+        return props.FourthTapComponent;
+      case "fifth-tap":
+        return props.FifthTapComponent;
+      default:
+        return null;
     }
   };
+
   return (
-    <div className={"w-10/12 mx-auto"}>
-      <div className={"taps flex justify-start px-10"}>
-        <ul
-          className={
-            "list-taps flex w-full border-b-2 border-gray-300 flex-row gap-6"
-          }
-        >
+    <div className="w-10/12 mx-auto">
+      <div className="taps flex justify-start px-10">
+        <ul className="list-taps flex w-full border-b-2 border-gray-300 flex-row gap-6">
           <li
-            id={"first-tap"}
-            onClick={(e) => handelTapsMovs(e)}
-            className={`item-tap ${isFirstTap ? " active-tap " : null}`}
+            id="first-tap"
+            onClick={handelTapsMovs}
+            className={`item-tap ${
+              activeTap === "first-tap" ? "active-tap" : ""
+            }`}
+            style={{
+              borderBottom:
+                activeTap === "first-tap" ? "2px solid #FFA726" : "none",
+            }}
           >
             {props.firstTapTitle}
           </li>
           <li
-            id={"second-tap"}
-            className={`item-tap ${isSecondTap ? " active-tap " : null}`}
-            onClick={(e) => handelTapsMovs(e)}
+            id="second-tap"
+            onClick={handelTapsMovs}
+            className={`item-tap ${
+              activeTap === "second-tap" ? "active-tap" : ""
+            }`}
+            style={{
+              borderBottom:
+                activeTap === "second-tap" ? "2px solid #FFA726" : "none",
+            }}
           >
             {props.secondTapTitle}
           </li>
           <li
-            id={"third-tap"}
-            className={`item-tap ${isThirdTap ? " active-tap " : null}`}
-            onClick={(e) => handelTapsMovs(e)}
+            id="third-tap"
+            onClick={handelTapsMovs}
+            className={`item-tap ${
+              activeTap === "third-tap" ? "active-tap" : ""
+            }`}
+            style={{
+              borderBottom:
+                activeTap === "third-tap" ? "2px solid #FFA726" : "none",
+            }}
           >
             {props.thirdTapTitle}
           </li>
           <li
-            id={"fourth-tap"}
-            className={`item-tap ${isFourthTap ? " active-tap " : null}`}
-            onClick={(e) => handelTapsMovs(e)}
+            id="fourth-tap"
+            onClick={handelTapsMovs}
+            className={`item-tap ${
+              activeTap === "fourth-tap" ? "active-tap" : ""
+            }`}
+            style={{
+              borderBottom:
+                activeTap === "fourth-tap" ? "2px solid #FFA726" : "none",
+            }}
           >
             {props.FourthTapTitle}
           </li>
           <li
-            id={"fifth-tap"}
-            className={`item-tap ${isFifthTap ? " active-tap " : null}`}
-            onClick={(e) => handelTapsMovs(e)}
+            id="fifth-tap"
+            onClick={handelTapsMovs}
+            className={`item-tap ${
+              activeTap === "fifth-tap" ? "active-tap" : ""
+            }`}
+            style={{
+              borderBottom:
+                activeTap === "fifth-tap" ? "2px solid #FFA726" : "none",
+            }}
           >
             {props.FifthTapTitle}
           </li>
