@@ -119,7 +119,7 @@ function NewEmployeeForm(props) {
               إضافه موظف
             </Typography>
           )}
-          <Grid container spacing={40}>
+          <Grid container spacing={20}>
             {/* Left Column */}
             <Grid item xs={12} md={6}>
               <Grid container direction="column" spacing={3}>

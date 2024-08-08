@@ -62,6 +62,7 @@ function AddNewTaskTap(props) {
   const initialValues = {
     name: "",
     description: "",
+    team: "",
     priority: "",
     deadline: "",
     assignTo: "",
@@ -71,8 +72,9 @@ function AddNewTaskTap(props) {
   };
 
   const handleSubmit = (values) => {
-    const hours = values.taskTimeHours.padStart(2, "0");
-    const minutes = values.taskTimeMinutes.padStart(2, "0");
+    console.log({ values });
+    const hours = String(values.taskTimeHours).padStart(2, "0");
+    const minutes = String(values.taskTimeMinutes).padStart(2, "0");
     const taskTime = `${hours}-${minutes}`;
     console.log({ taskTime });
     const submissionValues = {
@@ -179,7 +181,6 @@ function AddNewTaskTap(props) {
                     onChange={(event) => {
                       const value = event.target.value;
                       setFieldValue("team", value);
-                      setFieldValue("employee", "");
                       dispatch(GetEmployeesDepartmentAction({ id: value }));
                     }}
                     title="اختر الفريق"
@@ -220,11 +221,6 @@ function AddNewTaskTap(props) {
                       error={meta.touched && meta.error}
                       fullWidth
                     />
-                    {meta.touched && meta.error && (
-                      <Typography color="error" variant="caption">
-                        {meta.error}
-                      </Typography>
-                    )}
                   </>
                 )}
               </Field>
@@ -242,11 +238,6 @@ function AddNewTaskTap(props) {
                       error={meta.touched && meta.error}
                       fullWidth
                     />
-                    {meta.touched && meta.error && (
-                      <Typography color="error" variant="caption">
-                        {meta.error}
-                      </Typography>
-                    )}
                   </>
                 )}
               </Field>
