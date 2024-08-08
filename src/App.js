@@ -9,7 +9,7 @@ import AdminRoute from "./Routes/admin.route";
 function App() {
   return (
     <BrowserRouter>
-      <AdminRoute />
+      <AppRoute />
     </BrowserRouter>
   );
 }
