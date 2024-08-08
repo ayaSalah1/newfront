@@ -1,7 +1,6 @@
 import React from "react";
-import AdminRoute from "./admin.route";
 import { useSelector } from "react-redux";
-import { roles } from "./roles";
+import AdminRoute from "./admin.route";
 import ContentwritingRoute from "./Contentwriting.route";
 import PublisherRoute from "./Publisher.route";
 import AdvancePublisherRoute from "./AdvancePublisher.route";
@@ -9,38 +8,42 @@ import AdvancePublisherUploadRoute from "./AdvancePublisherUpload.route";
 import PublisherWriterRoute from "./PublisherWriter.route";
 import ManagerRoute from "./Manager.route";
 import AuthRoute from "./Auth.route";
+import { roles } from "./roles";
 
-function AppRoute(props) {
-  const user = JSON.parse(localStorage.getItem("user"));
+function AppRoute() {
   const userStore = useSelector((store) => store.user);
-  const hasUserData = user && user.data;
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  // Check if user is null or if user.data doesn't exist
+  if (!user || !user.data) {
+    return <AuthRoute />;
+  }
+
   const hasUserStore = userStore && userStore.isSuccess;
-  if (hasUserData || hasUserStore) {
+
+  if (hasUserStore) {
+    // If user data is present and the store operation was successful
     switch (user.data.role) {
       case roles.admin:
         return <AdminRoute />;
       case roles.writer:
-        // return <ContentwritingRoute />;
-        return <ContentwritingRoute />;
-      case roles.publisher:
-        // return <PublisherRoute />;
-        return <PublisherRoute />;
-      case roles.advancePublisher:
-        // return <AdvancePublisherRoute />;
-        return <AdvancePublisherRoute />;
-      case roles.advancePublisherUpload:
-        // return <AdvancePublisherUploadRoute />;
-        return <AdvancePublisherUploadRoute />;
-      case roles.publisherWriter:
-        // return <PublisherWriterRoute />;
-        return <PublisherWriterRoute />;
-      case roles.manager:
-        // return <ManagerRoute />;
         return <AdminRoute />;
+      case roles.publisher:
+        return <AdminRoute />;
+      case roles.advancePublisher:
+        return <AdminRoute />;
+      case roles.advancePublisherUpload:
+        return <AdminRoute />;
+      case roles.publisherWriter:
+        return <AdminRoute />;
+      case roles.manager:
+        return <AdminRoute />;
+      default:
+        return <AuthRoute />;
     }
   } else {
-    // return <AuthRoute />;
-    return <AdminRoute />;
+    // If the user data is not valid, return to the authentication route
+    return <AuthRoute />;
   }
 }
 
